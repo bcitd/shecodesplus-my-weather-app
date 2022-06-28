@@ -1,0 +1,56 @@
+.container {
+  font-family: "Montserrat", sans-serif;
+  color: #596aca;
+  align-items: center;
+}
+
+.search-bar {
+  margin-top: 20px;
+}
+.search-box {
+  border-radius: 15px;
+  margin-right: 10px;
+}
+.button {
+  color: white;
+  background-color: #596aca;
+  border-color: #596aca;
+}
+.city {
+  font-size: 34px;
+  font-weight: 600;
+}
+.datetime {
+  font-style: italic;
+}
+.current-temp-icon {
+  font-size: 30px;
+  margin-right: 5px;
+}
+.current-temp {
+  font-size: 60px;
+  font-weight: 600;
+}
+.degreeC {
+  position: relative;
+  font-weight: bolder;
+  font-size: 22px;
+  top: -25px;
+  opacity: 0.7;
+}
+.degreeC:hover {
+  cursor: pointer;
+}
+.degreeF {
+  position: relative;
+  font-size: 22px;
+  margin-left: -25px;
+  opacity: 0.7;
+}
+.degreeF:hover {
+  cursor: pointer;
+}
+.forecast {
+  text-align: center;
+  font-size: 20px;
+}

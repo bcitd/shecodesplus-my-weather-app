@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <!-- CSS only -->
+    <link href="src/styles.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/0feba0fde2.js"
+      crossorigin="anonymous"
+    >  </script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+   
+  </head>
+  <body>
+    <div class="wrapper">
+    <div class="container search-bar">
+      <form id="search-engine">
+        <input
+          type="text"
+          placeholder="Enter a city name here..."
+          autofocus="on"
+          class="search-box"
+          id="search-text-input"
+        />
+        <input class="button" type="submit" value="Search" id="search-button" />
+        <input class="button" type="submit" value="Current city" id ="current-location"/>      
+      </form>
+      
+    </div>
+    <br />
+    <div class="container">
+      <div class="row">
+        <div class="col-auto">
+          <div class="row-2">
+            Current weather in<br />
+            <div class="city" id="current-city">Hanoi</div>
+          </div>
+          <div class="row-2 datetime" id="current-time">Tuesday, 3 May 2022 22:49</div>
+        </div>
+        <div class="col-md">
+          <div class="row-2">Partly cloudy</div>
+          <div class="row-2">
+              <i class="fa-solid fa-cloud current-temp-icon"></i>
+            <span class="current-temp" id="current-temp">24</span><span class="degreeC" id="degree-c">°C</span> 
+            </i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+    <div class="container forecast">
+        <div class="row">
+      <div class="col-sm-auto">
+        Tue<br />
+        <i class="fa-solid fa-sun"></i>
+        <br />
+        20°
+      </div>
+      <div class="col-sm-auto">
+        Wed<br />
+        <i class="fa-solid fa-cloud-sun"></i>
+        <br />
+        21°
+      </div>
+      <div class="col-sm-auto">
+        Thu<br />
+        <i class="fa-solid fa-cloud-sun"></i>
+        <br />
+        23°
+      </div>
+      <div class="col-sm-auto">
+        Fri<br />
+        <i class="fa-solid fa-cloud-sun"></i>
+        <br />
+        25°
+      </div>
+      <div class="col-sm-auto">
+        Sat<br />
+        <i class="fa-solid fa-cloud-showers-heavy"></i>
+        <br />
+        25°
+      </div>
+      <div class="col-sm-auto">
+        Sun<br />
+        <i class="fa-solid fa-cloud-showers-heavy"></i>
+        <br />
+        25°
+      </div>
+      </div>
+    </div>
+    </div>
+         <script src="src/index.js"></script>
+  </body>
+</html>

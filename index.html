@@ -22,88 +22,104 @@
     <script
       src="https://kit.fontawesome.com/0feba0fde2.js"
       crossorigin="anonymous"
-    >  </script>
+    ></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-   
   </head>
   <body>
     <div class="wrapper">
-    <div class="container search-bar">
-      <form id="search-engine">
-        <input
-          type="text"
-          placeholder="Enter a city name here..."
-          autofocus="on"
-          class="search-box"
-          id="search-text-input"
-        />
-        <input class="button" type="submit" value="Search" id="search-button" />
-        <input class="button" type="submit" value="Current city" id ="current-location"/>      
-      </form>
-      
-    </div>
-    <br />
-    <div class="container">
-      <div class="row">
-        <div class="col-auto">
-          <div class="row-2">
-            Current weather in<br />
-            <div class="city" id="current-city">Hanoi</div>
-          </div>
-          <div class="row-2 datetime" id="current-time">Tuesday, 3 May 2022 22:49</div>
-        </div>
-        <div class="col-md">
-          <div class="row-2">Partly cloudy</div>
-          <div class="row-2">
-              <i class="fa-solid fa-cloud current-temp-icon"></i>
-            <span class="current-temp" id="current-temp">24</span><span class="degreeC" id="degree-c">°C</span> 
-            </i>
-          </div>
-        </div>
+      <div class="container search-bar">
+        <form id="search-engine">
+          <input
+            type="text"
+            placeholder="Enter a city name here..."
+            autofocus="on"
+            class="search-box"
+            id="search-text-input"
+          />
+          <input
+            class="button"
+            type="submit"
+            value="Search"
+            id="search-button"
+          />
+          <input
+            class="button"
+            type="submit"
+            value="Current city"
+            id="current-location"
+          />
+        </form>
       </div>
-    </div>
-    <br />
-    <div class="container forecast">
+      <br />
+      <div class="container">
         <div class="row">
-      <div class="col-sm-auto">
-        Tue<br />
-        <i class="fa-solid fa-sun"></i>
-        <br />
-        20°
+          <div class="col-auto">
+            <div class="row-2">
+              Current weather in<br />
+              <div class="city" id="current-city">Hanoi</div>
+            </div>
+            <div class="row-2 datetime" id="current-time">
+              Tuesday, 3 May 2022 22:49
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="row-2">Partly cloudy</div>
+            <div class="row-2">
+              <i class="fa-solid fa-cloud current-temp-icon"></i>
+              <span class="current-temp" id="current-temp">24</span
+              ><span class="degreeC" id="degree-c">°C</span>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="col-sm-auto">
-        Wed<br />
-        <i class="fa-solid fa-cloud-sun"></i>
-        <br />
-        21°
-      </div>
-      <div class="col-sm-auto">
-        Thu<br />
-        <i class="fa-solid fa-cloud-sun"></i>
-        <br />
-        23°
-      </div>
-      <div class="col-sm-auto">
-        Fri<br />
-        <i class="fa-solid fa-cloud-sun"></i>
-        <br />
-        25°
-      </div>
-      <div class="col-sm-auto">
-        Sat<br />
-        <i class="fa-solid fa-cloud-showers-heavy"></i>
-        <br />
-        25°
-      </div>
-      <div class="col-sm-auto">
-        Sun<br />
-        <i class="fa-solid fa-cloud-showers-heavy"></i>
-        <br />
-        25°
-      </div>
+      <br />
+      <div class="container forecast">
+        <div class="row">
+          <div class="col-sm-auto">
+            Tue<br />
+            <i class="fa-solid fa-sun"></i>
+            <br />
+            20°
+          </div>
+          <div class="col-sm-auto">
+            Wed<br />
+            <i class="fa-solid fa-cloud-sun"></i>
+            <br />
+            21°
+          </div>
+          <div class="col-sm-auto">
+            Thu<br />
+            <i class="fa-solid fa-cloud-sun"></i>
+            <br />
+            23°
+          </div>
+          <div class="col-sm-auto">
+            Fri<br />
+            <i class="fa-solid fa-cloud-sun"></i>
+            <br />
+            25°
+          </div>
+          <div class="col-sm-auto">
+            Sat<br />
+            <i class="fa-solid fa-cloud-showers-heavy"></i>
+            <br />
+            25°
+          </div>
+          <div class="col-sm-auto">
+            Sun<br />
+            <i class="fa-solid fa-cloud-showers-heavy"></i>
+            <br />
+            25°
+          </div>
+        </div>
       </div>
     </div>
-    </div>
-         <script src="src/index.js"></script>
+    <a
+      href="https://github.com/bcitd/shecodesplus-my-weather-app"
+      target="_blank"
+      class="footer"
+      >GitHub repository</a
+    >
+    <script src="src/index.js"></script>
   </body>
 </html>

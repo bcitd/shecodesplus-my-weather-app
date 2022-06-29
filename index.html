@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
-    <!-- CSS only -->
     <link href="src/styles.css" rel="stylesheet" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
@@ -67,7 +66,8 @@
             <div class="row-2">
               <img src="" alt="" id="weather-icon" />
               <span class="current-temp" id="current-temp">24</span
-              ><span class="degreeC" id="degree-c">°C</span>
+              ><span class="active" id="degree-c">°C</span
+              ><span id="degree-f">°F</span>
             </div>
           </div>
         </div>
@@ -113,13 +113,15 @@
           </div>
         </div>
       </div>
+      <span class="footer"
+        >Coded by Trang Pham.
+        <a
+          href="https://github.com/bcitd/shecodesplus-my-weather-app"
+          target="_blank"
+          >GitHub repository</a
+        >
+      </span>
     </div>
-    <a
-      href="https://github.com/bcitd/shecodesplus-my-weather-app"
-      target="_blank"
-      class="footer"
-      >GitHub repository</a
-    >
     <script src="src/index.js"></script>
   </body>
 </html>

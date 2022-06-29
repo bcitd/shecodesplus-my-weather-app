@@ -35,24 +35,26 @@
   font-size: 60px;
   font-weight: 600;
 }
-.degreeC {
+#degree-c {
   position: relative;
-  font-weight: bolder;
   font-size: 22px;
   top: -25px;
   opacity: 0.7;
 }
-.degreeC:hover {
+#degree-c:hover {
   cursor: pointer;
 }
-.degreeF {
+#degree-f {
   position: relative;
   font-size: 22px;
   margin-left: -25px;
   opacity: 0.7;
 }
-.degreeF:hover {
+#degree-f:hover {
   cursor: pointer;
+}
+.active {
+  font-weight: bolder;
 }
 .forecast {
   text-align: center;
@@ -60,6 +62,8 @@
 }
 .footer {
   display: block;
+  margin-top: 15px;
   margin-left: 140px;
   font-size: 12px;
+  font-style: italic;
 }

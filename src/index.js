@@ -39,21 +39,36 @@ function currentTime() {
   currentTime.innerHTML = `${currentDay}, ${currentDate} ${currentMonth} ${currentYear} ${currentHour}:${currentMinute}`;
 }
 
-currentTime();
-let currentCity = document.querySelector("#current-city");
-
 function showCurrentTemp(response) {
   let currentTemp = document.querySelector("#current-temp");
   let description = document.querySelector("#description");
   let weatherIcon = document.querySelector("#weather-icon");
+  celsiusTemp = Math.round(response.data.main.temp);
   currentCity.innerHTML = response.data.name;
-  currentTemp.innerHTML = Math.round(response.data.main.temp);
+  currentTemp.innerHTML = celsiusTemp;
   description.innerHTML = response.data.weather[0].description;
   weatherIcon.setAttribute(
     "src",
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   weatherIcon.setAttribute("alt", response.data.weather[0].description);
+  degreeC.classList.add("active");
+  degreeF.classList.remove("active");
+}
+
+function convertCelsius() {
+  let currentTemp = document.querySelector("#current-temp");
+  currentTemp.innerHTML = celsiusTemp;
+  degreeC.classList.add("active");
+  degreeF.classList.remove("active");
+}
+
+function convertFahrenheit() {
+  let currentTemp = document.querySelector("#current-temp");
+  let fahrenheitTemp = Math.round(celsiusTemp * 1.8 + 32);
+  currentTemp.innerHTML = fahrenheitTemp;
+  degreeF.classList.add("active");
+  degreeC.classList.remove("active");
 }
 
 function searchCity(city) {
@@ -74,9 +89,6 @@ function search(event) {
   }
 }
 
-let searchEngine = document.querySelector("#search-engine");
-searchEngine.addEventListener("submit", search);
-
 function searchCurrentLocation(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
@@ -90,7 +102,21 @@ function getCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(searchCurrentLocation);
 }
 
+let searchEngine = document.querySelector("#search-engine");
+searchEngine.addEventListener("submit", search);
+
+let currentCity = document.querySelector("#current-city");
+
 let currentCityBttn = document.querySelector("#current-location");
 currentCityBttn.addEventListener("click", getCurrentLocation);
 
+let celsiusTemp = "null";
+
+let degreeC = document.querySelector("#degree-c");
+degreeC.addEventListener("click", convertCelsius);
+
+let degreeF = document.querySelector("#degree-f");
+degreeF.addEventListener("click", convertFahrenheit);
+
+currentTime();
 searchCity("Hanoi");

@@ -45,9 +45,15 @@ let currentCity = document.querySelector("#current-city");
 function showCurrentTemp(response) {
   let currentTemp = document.querySelector("#current-temp");
   let description = document.querySelector("#description");
+  let weatherIcon = document.querySelector("#weather-icon");
   currentCity.innerHTML = response.data.name;
   currentTemp.innerHTML = Math.round(response.data.main.temp);
   description.innerHTML = response.data.weather[0].description;
+  weatherIcon.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  weatherIcon.setAttribute("alt", response.data.weather[0].description);
 }
 
 function searchCity(city) {

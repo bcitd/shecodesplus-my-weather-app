@@ -25,6 +25,7 @@
 }
 #description {
   text-transform: capitalize;
+  margin-left: 50px;
 }
 .current-temp-icon {
   font-size: 30px;

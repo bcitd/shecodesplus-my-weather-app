@@ -27,9 +27,9 @@
   text-transform: capitalize;
   margin-left: 50px;
 }
-.current-temp-icon {
-  font-size: 30px;
-  margin-right: 5px;
+#weather-icon {
+  width: 100px;
+  margin-bottom: 20px;
 }
 .current-temp {
   font-size: 60px;

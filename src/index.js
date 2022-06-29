@@ -1,53 +1,59 @@
-let now = new Date();
-let days = [
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-  "Sunday",
-];
-let currentDay = days[now.getDay()];
-let currentDate = now.getDate();
-let months = [
-  "Jan",
-  "Feb",
-  "Mar",
-  "Apr",
-  "May",
-  "Jun",
-  "Jul",
-  "Aug",
-  "Sep",
-  "Oct",
-  "Nov",
-  "Dec",
-];
-let currentMonth = months[now.getMonth()];
-let currentYear = now.getFullYear();
-let currentHour = now.getHours();
-if (currentHour < 10) {
-  currentHour = `0${currentHour}`;
+function currentTime() {
+  let now = new Date();
+  let days = [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday",
+  ];
+  let currentDay = days[now.getDay()];
+  let currentDate = now.getDate();
+  let months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  let currentMonth = months[now.getMonth()];
+  let currentYear = now.getFullYear();
+  let currentHour = now.getHours();
+  if (currentHour < 10) {
+    currentHour = `0${currentHour}`;
+  }
+  let currentMinute = now.getMinutes();
+  if (currentMinute < 10) {
+    currentMinute = `0${currentMinute}`;
+  }
+  let currentTime = document.querySelector("#current-time");
+  currentTime.innerHTML = `${currentDay}, ${currentDate} ${currentMonth} ${currentYear} ${currentHour}:${currentMinute}`;
 }
-let currentMinute = now.getMinutes();
-if (currentMinute < 10) {
-  currentMinute = `0${currentMinute}`;
-}
-let currentTime = document.querySelector("#current-time");
-currentTime.innerHTML = `${currentDay}, ${currentDate} ${currentMonth} ${currentYear} ${currentHour}:${currentMinute}`;
 
+currentTime();
 let currentCity = document.querySelector("#current-city");
-let currentTemp = document.querySelector("#current-temp");
 
 function showCurrentTemp(response) {
-  currentTemp.innerHTML = Math.round(response.data.main.temp);
+  let currentTemp = document.querySelector("#current-temp");
+  let description = document.querySelector("#description");
   currentCity.innerHTML = response.data.name;
+  currentTemp.innerHTML = Math.round(response.data.main.temp);
+  description.innerHTML = response.data.weather[0].description;
 }
 
 function searchCity(city) {
   let apiKey = "15e40d2ffa0578647f1c626db4ee96ed";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
   axios.get(apiUrl).then(showCurrentTemp);
 }
 

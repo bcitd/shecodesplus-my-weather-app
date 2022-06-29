@@ -23,6 +23,9 @@
 .datetime {
   font-style: italic;
 }
+#description {
+  text-transform: capitalize;
+}
 .current-temp-icon {
   font-size: 30px;
   margin-right: 5px;

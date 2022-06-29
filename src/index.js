@@ -40,18 +40,20 @@ function currentTime() {
 }
 
 function showCurrentTemp(response) {
-  let currentTemp = document.querySelector("#current-temp");
   let description = document.querySelector("#description");
+  let currentWindSpeed = document.querySelector("#wind-speed");
   let weatherIcon = document.querySelector("#weather-icon");
+  let currentTemp = document.querySelector("#current-temp");
   celsiusTemp = Math.round(response.data.main.temp);
   currentCity.innerHTML = response.data.name;
-  currentTemp.innerHTML = celsiusTemp;
   description.innerHTML = response.data.weather[0].description;
+  currentWindSpeed.innerHTML = response.data.wind.speed;
   weatherIcon.setAttribute(
     "src",
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   weatherIcon.setAttribute("alt", response.data.weather[0].description);
+  currentTemp.innerHTML = celsiusTemp;
   degreeC.classList.add("active");
   degreeF.classList.remove("active");
 }

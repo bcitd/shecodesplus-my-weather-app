@@ -7,10 +7,12 @@
 .search-bar {
   margin-top: 20px;
 }
+
 .search-box {
   border-radius: 15px;
   margin-right: 10px;
 }
+
 .button {
   color: white;
   background-color: #596aca;
@@ -25,7 +27,9 @@
 }
 #description {
   text-transform: capitalize;
-  margin-left: 50px;
+}
+.windspeed {
+  display: float-end;
 }
 #weather-icon {
   width: 100px;

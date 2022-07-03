@@ -39,6 +39,28 @@ function currentTime() {
   currentTime.innerHTML = `${currentDay}, ${currentDate} ${currentMonth} ${currentYear} ${currentHour}:${currentMinute}`;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Wed", "Thu", "Fri", "Sat", "Sun"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+        <div class="col-sm-auto">
+          <div class="forecast-date">${day}</div>
+          <img src="" alt="" id="weather-icon" />
+          <div class="forecast-temps>
+            <span class="highest-forecast-temp">23°</span>
+            <span class="lowest-forecast-temp">23°</span>
+          </div>
+        </div>
+      `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function showCurrentTemp(response) {
   let description = document.querySelector("#description");
   let currentWindSpeed = document.querySelector("#wind-speed");
@@ -122,3 +144,4 @@ degreeF.addEventListener("click", convertFahrenheit);
 
 currentTime();
 searchCity("Hanoi");
+displayForecast();

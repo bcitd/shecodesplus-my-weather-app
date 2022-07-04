@@ -45,21 +45,7 @@
   top: -25px;
   opacity: 0.7;
 }
-#degree-c:hover {
-  cursor: pointer;
-}
-#degree-f {
-  position: relative;
-  font-size: 22px;
-  margin-left: -25px;
-  opacity: 0.7;
-}
-#degree-f:hover {
-  cursor: pointer;
-}
-.active {
-  font-weight: bolder;
-}
+
 .forecast {
   text-align: center;
   font-size: 18px;

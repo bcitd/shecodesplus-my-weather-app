@@ -97,25 +97,8 @@ function showCurrentTemp(response) {
   );
   weatherIcon.setAttribute("alt", response.data.weather[0].description);
   currentTemp.innerHTML = celsiusTemp;
-  degreeC.classList.add("active");
-  degreeF.classList.remove("active");
 
   getForecast(response.data.coord);
-}
-
-function convertCelsius() {
-  let currentTemp = document.querySelector("#current-temp");
-  currentTemp.innerHTML = celsiusTemp;
-  degreeC.classList.add("active");
-  degreeF.classList.remove("active");
-}
-
-function convertFahrenheit() {
-  let currentTemp = document.querySelector("#current-temp");
-  let fahrenheitTemp = Math.round(celsiusTemp * 1.8 + 32);
-  currentTemp.innerHTML = fahrenheitTemp;
-  degreeF.classList.add("active");
-  degreeC.classList.remove("active");
 }
 
 function searchCity(city) {
@@ -158,12 +141,6 @@ let currentCityBttn = document.querySelector("#current-location");
 currentCityBttn.addEventListener("click", getCurrentLocation);
 
 let celsiusTemp = "null";
-
-let degreeC = document.querySelector("#degree-c");
-degreeC.addEventListener("click", convertCelsius);
-
-let degreeF = document.querySelector("#degree-f");
-degreeF.addEventListener("click", convertFahrenheit);
 
 currentTime();
 searchCity("Hanoi");

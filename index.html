@@ -25,8 +25,8 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
   <body>
-    <div class="wrapper">
-      <div class="container search-bar">
+    <div class="wrapper border rounded shadow-sm p-3 mb-5 bg-white rounded">
+      <div class="container search-bar d-flex align-items-center">
         <form id="search-engine">
           <input
             type="text"
@@ -51,8 +51,8 @@
       </div>
       <br />
       <div class="container">
-        <div class="row">
-          <div class="col-3">
+        <div class="row justify-content-center">
+          <div class="col-auto">
             <div>
               Current weather in<br />
               <div class="city" id="current-city">Hanoi</div>
@@ -61,15 +61,15 @@
               Tuesday, 3 May 2022 22:49
             </div>
           </div>
-          <div class="col-3">
+          <div class="col-auto">
             <div id="description">Partly cloudy</div>
             <div class="windspeed">
               Wind speed: <span id="wind-speed">10</span> m/s
             </div>
-            <div>
+            <div class="d-flex justify-content-end">
               <img src="" alt="" id="weather-icon" />
               <span class="current-temp" id="current-temp">24</span
-              ><span class="active" id="degree-c">°C</span>
+              ><span id="degree-c">°C</span>
             </div>
           </div>
         </div>

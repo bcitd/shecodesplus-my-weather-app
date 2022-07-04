@@ -1,13 +1,13 @@
 function currentTime() {
   let now = new Date();
   let days = [
+    "Sunday",
     "Monday",
     "Tuesday",
     "Wednesday",
     "Thursday",
     "Friday",
     "Saturday",
-    "Sunday",
   ];
   let currentDay = days[now.getDay()];
   let currentDate = now.getDate();
@@ -42,16 +42,16 @@ function currentTime() {
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   day = date.getDay();
-  days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+  days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   return days[day];
 }
 
 function displayForecast(response) {
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
-  let forecastHTML = `<div class="row">`;
+  let forecastHTML = `<div class="row justify-content-center">`;
   forecast.forEach(function (forecastDay, index) {
-    if (index < 5) {
+    if (index < 6) {
       forecastHTML =
         forecastHTML +
         `
@@ -59,7 +59,7 @@ function displayForecast(response) {
           <div class="forecast-date">${formatDay(forecastDay.dt)}</div>
           <img src="https://openweathermap.org/img/wn/${
             forecastDay.weather[0].icon
-          }@2x.png" alt="" id="weather-icon" />
+          }@2x.png" alt="" id="forecast-weather-icon"/>
           <div class="forecast-temps>
             <span class="highest-forecast-temp">${Math.round(
               forecastDay.temp.max
